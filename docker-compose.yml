@@ -1,5 +1,5 @@
 web:
-  image: drupal:7.43-apache
+  build: ./
   ports: 
     - "8000:80"
   volumes:
