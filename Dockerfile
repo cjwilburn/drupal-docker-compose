@@ -6,6 +6,7 @@ RUN apt-get update
 RUN apt-get install -y \
 	vim \
 	git \
+	php5-cli \
 	php5-xdebug \
 	mysql-client \
 	wget \
@@ -19,7 +20,7 @@ RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
 # Install Drush via composer.
-RUN composer global update
+RUN composer --working-dir=/var/www/ global update
 RUN composer global require drush/drush:dev-master
 
 # Setup PHP.
