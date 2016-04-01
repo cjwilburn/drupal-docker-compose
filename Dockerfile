@@ -20,23 +20,12 @@ RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
 # Install Drush via composer.
-RUN composer --working-dir=/var/www/ global update
 RUN composer global require drush/drush:dev-master
 
 # Setup PHP.
-RUN sed -i 's/display_errors = Off/display_errors = On/' /etc/php5/apache2/php.ini
-RUN sed -i 's/display_errors = Off/display_errors = On/' /etc/php5/cli/php.ini
-
-# Setup Apache.
-# In order to run our Simpletest tests, we need to make Apache
-# listen on the same port as the one we forwarded. Because we use
-# 8000 by default, we set it up for that port.
-RUN sed -i 's/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
-RUN sed -i 's/DocumentRoot \/var\/www\/html/DocumentRoot \/var\/www/' /etc/apache2/sites-available/000-default.conf
-RUN echo "Listen 8000" >> /etc/apache2/ports.conf
-RUN sed -i 's/VirtualHost \*:80/VirtualHost \*:\*/' /etc/apache2/sites-available/000-default.conf
-RUN a2enmod rewrite
+COPY ./config/php-docker.ini /usr/local/etc/php/conf.d/
+COPY ./config/php-docker.ini /etc/php5/cli/conf.d/
 
 # Setup XDebug.
-RUN echo "xdebug.max_nesting_level = 300" >> /etc/php5/apache2/conf.d/20-xdebug.ini
-RUN echo "xdebug.max_nesting_level = 300" >> /etc/php5/cli/conf.d/20-xdebug.ini
+COPY ./config/xdebug-docker.ini /usr/local/etc/php/conf.d/
+COPY ./config/xdebug-docker.ini /etc/php5/cli/conf.d/
