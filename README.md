@@ -28,6 +28,6 @@ Drupal development environment using [Docker Compose](https://docs.docker.com/co
 Licensed under the incredibly [permissive](http://en.wikipedia.org/wiki/Permissive_free_software_licence) [MIT license](http://creativecommons.org/licenses/MIT/)
 
 ## Thanks
-With thanks to Rob Loach for his [Docker Compose repo](https://github.com/RobLoach/docker-compose-drupal), @wadmiraal for his [Docker Drupal repo](https://github.com/wadmiraal/docker-drupal/) [Karol Sojko](https://github.com/karolsojko) my fellow colleague from [X-Team](x-team.com) for all their help, directly & indirectly.
+With thanks to Rob Loach for his [Docker Compose repo](https://github.com/RobLoach/docker-compose-drupal), @wadmiraal for his [Docker Drupal repo](https://github.com/wadmiraal/docker-drupal/) and [Karol Sojko](https://github.com/karolsojko), my fellow colleague from [X-Team](x-team.com) for all their help, directly & indirectly.
 
 Copyright &copy; 2016+ [Paul McCrodden](http://opensourceopenmind.ninja)
