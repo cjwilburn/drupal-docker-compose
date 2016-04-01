@@ -22,6 +22,10 @@ RUN mv composer.phar /usr/local/bin/composer
 # Install Drush via composer.
 RUN composer global require drush/drush:dev-master
 
+# Configure composer bin path for drush inside container and from exec.
+RUN echo 'export PATH="$HOME/.composer/vendor/bin:$PATH"' >> /root/.bashrc
+ENV PATH /root/.composer/vendor/bin:$PATH
+
 # Setup PHP.
 COPY ./config/php-docker.ini /usr/local/etc/php/conf.d/
 COPY ./config/php-docker.ini /etc/php5/cli/conf.d/
