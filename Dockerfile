@@ -6,13 +6,7 @@ RUN apt-get update
 RUN apt-get install -y \
 	vim \
 	git \
-	php5-cli \
-	php5-mysql \
-	php5-gd \
-	php5-curl \
 	php5-xdebug \
-	libapache2-mod-php5 \
-	curl \
 	mysql-client \
 	wget \
 	iputils-ping \
@@ -45,5 +39,3 @@ RUN a2enmod rewrite
 # Setup XDebug.
 RUN echo "xdebug.max_nesting_level = 300" >> /etc/php5/apache2/conf.d/20-xdebug.ini
 RUN echo "xdebug.max_nesting_level = 300" >> /etc/php5/cli/conf.d/20-xdebug.ini
-
-EXPOSE 80
