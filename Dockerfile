@@ -33,3 +33,11 @@ COPY ./config/php-docker.ini /etc/php5/cli/conf.d/
 # Setup XDebug.
 COPY ./config/xdebug-docker.ini /usr/local/etc/php/conf.d/
 COPY ./config/xdebug-docker.ini /etc/php5/cli/conf.d/
+
+# Map directory ownership (docker-machine-nfs setup).
+RUN usermod -u 501 www-data
+RUN usermod -G dialout www-data
+
+# Map directory ownership (standard setup).
+#RUN usermod -u 1000 www-data
+#RUN usermod -G staff www-data
