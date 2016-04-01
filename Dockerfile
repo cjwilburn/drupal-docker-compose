@@ -6,7 +6,6 @@ RUN apt-get update
 RUN apt-get install -y \
 	vim \
 	git \
-	apache2 \
 	php5-cli \
 	php5-mysql \
 	php5-gd \
@@ -14,9 +13,7 @@ RUN apt-get install -y \
 	php5-xdebug \
 	libapache2-mod-php5 \
 	curl \
-	mysql-server \
 	mysql-client \
-	openssh-server \
 	wget \
 	iputils-ping \
 	zip \
