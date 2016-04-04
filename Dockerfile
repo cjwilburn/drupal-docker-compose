@@ -32,7 +32,8 @@ COPY ./config/php-docker.ini /etc/php5/cli/conf.d/
 
 # Setup XDebug.
 COPY ./config/xdebug-docker.ini /usr/local/etc/php/conf.d/
-COPY ./config/xdebug-docker.ini /etc/php5/cli/conf.d/
+RUN echo "zend_extension = '$(find / -name xdebug.so 2> /dev/null)'\n$(cat /usr/local/etc/php/conf.d/xdebug-docker.ini)" > /usr/local/etc/php/conf.d/xdebug-docker.ini
+RUN cp /usr/local/etc/php/conf.d/xdebug-docker.ini /etc/php5/cli/conf.d/
 
 # Map directory ownership (docker-machine-nfs setup).
 RUN usermod -u 501 www-data
