@@ -9,9 +9,15 @@ web:
     - solr:solr
   working_dir: /var/www/html
   expose:
-    - "8000"
-
-# MySQL Server
+    - "9000"
+nginx:
+    image: nginx:1.9
+    volumes_from:
+        - web
+    links:
+        - web
+    ports:
+        - "8000:80"
 mysql:
   image: mysql:5.7
   environment:

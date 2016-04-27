@@ -1,9 +1,14 @@
-FROM drupal:7.43-apache
+FROM php:5-fpm
 MAINTAINER Paul McCrodden <paul.mccrodden@x-team.com>
 
+# Install the PHP extensions we need. *taken from docker-library/drupal Dockerfile*
+RUN apt-get update && apt-get install -y libpng12-dev libjpeg-dev libpq-dev \
+	&& rm -rf /var/lib/apt/lists/* \
+	&& docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
+	&& docker-php-ext-install gd mbstring pdo pdo_mysql pdo_pgsql zip
+
 # Install packages.
-RUN apt-get update
-RUN apt-get install -y \
+RUN apt-get update && apt-get install -y \
 	vim \
 	git \
 	php5-cli \
@@ -11,8 +16,9 @@ RUN apt-get install -y \
 	mysql-client \
 	wget \
 	iputils-ping \
-	zip \
-	unzip
+	unzip \
+	libicu-dev \
+	libssl-dev
 RUN apt-get clean
 
 # Install Composer.
@@ -25,6 +31,9 @@ RUN composer global require drush/drush:dev-master
 # Configure composer bin path for drush inside container and from exec.
 RUN echo 'export PATH="$HOME/.composer/vendor/bin:$PATH"' >> /root/.bashrc
 ENV PATH /root/.composer/vendor/bin:$PATH
+
+# Setup Nginx
+COPY ./config/nginx-docker.conf /etc/nginx/conf.d/default.conf
 
 # Setup PHP.
 COPY ./config/php-docker.ini /usr/local/etc/php/conf.d/
