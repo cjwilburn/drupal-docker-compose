@@ -14,8 +14,8 @@ Drupal development environment using [Docker Compose](https://docs.docker.com/co
   docker-compose --version
   ```
 3. [Docker Machine NFS](https://github.com/adlogix/docker-machine-nfs)
-** Mac Users using this script to use NFS should be able to use default setup.
-** If not using NFS or on other OS, see [Dockerfile](https://github.com/mccrodp/drupal-docker-compose/blob/master/Dockerfile) for directory ownership mapping.
+ * Mac Users using this script to use NFS should be able to use default setup.
+ * If not using NFS or on other OS, see [Dockerfile](https://github.com/mccrodp/drupal-docker-compose/blob/master/Dockerfile) for directory ownership mapping.
 
 ## Usage
 
@@ -27,7 +27,7 @@ Drupal development environment using [Docker Compose](https://docs.docker.com/co
 
 ## License
 
-Licensed under the [permissive](http://en.wikipedia.org/wiki/Permissive_free_software_licence) [MIT license](http://creativecommons.org/licenses/MIT/)
+Licensed under the [permissive](http://en.wikipedia.org/wiki/Permissive_free_software_licence) [MIT license](http://creativecommons.org/licenses/MIT/).
 
 ## Thanks
 With thanks to Rob Loach for his [Docker Compose repo](https://github.com/RobLoach/docker-compose-drupal), @wadmiraal for his [Docker Drupal repo](https://github.com/wadmiraal/docker-drupal/) and [Karol Sojko](https://github.com/karolsojko), my fellow colleague from [X-Team](x-team.com) for all their help, directly & indirectly.
