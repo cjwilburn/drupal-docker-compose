@@ -33,7 +33,7 @@ RUN echo 'export PATH="$HOME/.composer/vendor/bin:$PATH"' >> /root/.bashrc
 ENV PATH /root/.composer/vendor/bin:$PATH
 
 # Setup Nginx
-COPY ./config/nginx-docker.conf /etc/nginx/conf.d/default.conf
+ADD ./config/nginx-docker.conf /etc/nginx/conf.d/default.conf
 
 # Setup PHP.
 COPY ./config/php-docker.ini /usr/local/etc/php/conf.d/
@@ -51,3 +51,5 @@ RUN usermod -G dialout www-data
 # Map directory ownership (standard setup).
 #RUN usermod -u 1000 www-data
 #RUN usermod -G staff www-data
+
+WORKDIR /var/www/html
