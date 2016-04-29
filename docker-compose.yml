@@ -1,3 +1,4 @@
+# Main PHP-FPM entrypoint
 web:
   build: ./
   volumes:
@@ -9,6 +10,7 @@ web:
   working_dir: /var/www/html
   expose:
     - "9000"
+# Nginx container
 nginx:
     image: nginx:1.9
     volumes_from:
@@ -17,6 +19,7 @@ nginx:
         - web
     ports:
         - "8000:80"
+# MySQL Server
 mysql:
   image: mysql:5.7
   environment:
@@ -27,6 +30,7 @@ mysql:
     MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
   expose:
     - "3306"
+# Optional Solr config
 solr:
   build: ../build/apachesolr-drupal-docker/4.x
   ports:

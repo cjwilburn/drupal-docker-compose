@@ -1,7 +1,10 @@
 # Docker Compose: Drupal
 
-Drupal development environment using [Docker Compose](https://docs.docker.com/compose/); php-fpm, nginx, mysql, solr.
+Drupal development environment using [Docker Compose](https://docs.docker.com/compose/).
 
+### Branches:
++ **php-fpm-nginx** => php-fpm, nginx, mysql, solr.
++ **apache** => apache, mysql, solr.
 
 ## Prerequisites
 
@@ -20,10 +23,11 @@ Drupal development environment using [Docker Compose](https://docs.docker.com/co
 ## Usage
 
 1. Place Drupal in the `/drupal/` directory so that it lives at `docker-compose-drupal/drupal`.
-2. Run `docker-compose up`
-3. Visit `http://VBOXNET_IP:8000` in your browser
-4. Use `drupal:drupal@mysql/drupal` for the database settings. e.g. `docker exec -i drupaldockercompose_mysql_1 mysql -udrupal -pdrupal drupal < database_dump.sql`
-5. To run a [Drush](http://drush.org) command, execute `docker-compose exec web drush status`
+2. *(optional)* Create a `/build/` directory outside of this repo and clone [Apache Solr for Drupal](https://github.com/mxr576/apachesolr-drupal-docker) there.
+3. Run `docker-compose up`
+4. Visit `http://VBOXNET_IP:8000` in your browser
+5. Use `drupal:drupal@mysql/drupal` for the database settings. e.g. `docker exec -i drupaldockercompose_mysql_1 mysql -udrupal -pdrupal drupal < database_dump.sql`
+6. To run a [Drush](http://drush.org) command, execute `docker-compose exec web drush status`
 
 ## License
 
