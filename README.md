@@ -16,7 +16,7 @@ Drupal development environment using [Docker Compose](https://docs.docker.com/co
   ```
   docker-compose --version
   ```
-3. [Docker Machine NFS](https://github.com/adlogix/docker-machine-nfs)
+3. *(optional)* [Docker Machine NFS](https://github.com/adlogix/docker-machine-nfs)
  * Mac Users using this script to use NFS should be able to use default setup.
  * If not using NFS or on other OS, see [Dockerfile](https://github.com/mccrodp/drupal-docker-compose/blob/master/Dockerfile) for directory ownership mapping.
 
