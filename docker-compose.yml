@@ -1,3 +1,4 @@
+# Main Apache Server
 web:
   build: ./
   ports: 
@@ -22,6 +23,7 @@ mysql:
     MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
   expose:
     - "3306"
+# Optional - Apache Solr Config
 solr:
   build: ../build/apachesolr-drupal-docker/4.x
   ports:
