@@ -22,7 +22,7 @@ Drupal development environment using [Docker Compose](https://docs.docker.com/co
 1. Place Drupal in the `/drupal/` directory so that it lives at `docker-compose-drupal/drupal`.
 2. Run `docker-compose up`
 3. Visit `http://VBOXNET_IP:8000` in your browser
-4. Use `drupal:drupal@mysql/drupal` for the database settings
+4. Use `drupal:drupal@mysql/drupal` for the database settings. e.g. `docker exec -i drupaldockercompose_mysql_1 mysql -udrupal -pdrupal drupal < database_dump.sql`
 5. To run a [Drush](http://drush.org) command, execute `docker-compose exec web drush status`
 
 ## License
