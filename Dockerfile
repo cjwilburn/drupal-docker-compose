@@ -32,9 +32,6 @@ RUN composer global require drush/drush:dev-master
 RUN echo 'export PATH="$HOME/.composer/vendor/bin:$PATH"' >> /root/.bashrc
 ENV PATH /root/.composer/vendor/bin:$PATH
 
-# Setup Nginx
-ADD ./config/nginx-docker.conf /etc/nginx/conf.d/default.conf
-
 # Setup PHP.
 COPY ./config/php-docker.ini /usr/local/etc/php/conf.d/
 COPY ./config/php-docker.ini /etc/php5/cli/conf.d/
