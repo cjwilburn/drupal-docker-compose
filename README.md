@@ -23,7 +23,7 @@ Drupal development environment using [Docker Compose](https://docs.docker.com/co
 ## Usage
 
 1. Place Drupal in the `/drupal/` directory so that it lives at `docker-compose-drupal/drupal`.
-2. (optional) Create a `/build/` directory outside of this repo and clone [Apache Solr for Drupal](https://github.com/mxr576/apachesolr-drupal-docker) there.
+2. (optional) Create a `/build/` directory outside of this repo and clone [Apache Solr for Drupal](https://github.com/mccrodp/apachesolr-drupal-docker) there.
 3. Run `docker-compose up`
 4. Visit `http://VBOXNET_IP:8000` in your browser
 5. Use `drupal:drupal@mysql/drupal` for the database settings. e.g. `docker exec -i drupaldockercompose_mysql_1 mysql -udrupal -pdrupal drupal < database_dump.sql`
