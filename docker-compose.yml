@@ -1,3 +1,4 @@
+version: '2'
 # Main Apache Server
 web:
   build: ./
@@ -24,9 +25,9 @@ mysql:
   expose:
     - "3306"
 # Optional - Apache Solr Config
-solr:
-  build: ../build/apachesolr-drupal-docker/4.x
-  ports:
-    - "8983:8983"
-  expose:
-    - "8983"
+# solr:
+#   build: ../build/apachesolr-drupal-docker/4.x
+#   ports:
+#     - "8983:8983"
+#   expose:
+#     - "8983"
