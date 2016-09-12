@@ -1,4 +1,4 @@
-FROM drupal:7.43-apache
+FROM drupal:8.2-apache
 MAINTAINER Paul McCrodden <paul.mccrodden@x-team.com>
 
 # Install packages.
