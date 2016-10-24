@@ -9,7 +9,7 @@ services:
       - ./drupal:/var/www/html
     links:
       - mysql:mysql
-      - solr:solr
+    #  - solr:solr
     working_dir: /var/www/html
     expose:
       - "8000"
