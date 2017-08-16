@@ -1,4 +1,4 @@
-FROM php:5-fpm
+FROM php:5.6.31-fpm
 MAINTAINER Paul McCrodden <paul.mccrodden@x-team.com>
 
 # Install the PHP extensions we need. *taken from docker-library/drupal Dockerfile*
